@@ -16,6 +16,5 @@ public class PurchaseHistory implements Serializable {
   private Long id;
   private Long customerId;
   private Long productId;
-  @CreationTimestamp
   private Date createdDate;
 }

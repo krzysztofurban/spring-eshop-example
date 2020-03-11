@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /eshop
+  port: 8080
+spring:
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+    generate-ddl: true
