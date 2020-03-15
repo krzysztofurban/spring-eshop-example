@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.krzysztofurban.springeshopexample.model.dto.CustomerDto;
 import pl.krzysztofurban.springeshopexample.model.orders.Customer;
+import pl.krzysztofurban.springeshopexample.model.projection.CustomerProjection;
 import pl.krzysztofurban.springeshopexample.repository.history.PurchaseHistoryRepository;
 import pl.krzysztofurban.springeshopexample.repository.orders.CustomerRepository;
 import pl.krzysztofurban.springeshopexample.repository.orders.OrderRepository;
@@ -36,13 +37,23 @@ public class TestDataLoader implements CommandLineRunner {
     log.info("Products {}", productService.findAll());
     log.info("Orders {}", orderRepository.findAll());
     log.info("PurchaseHistory {}", purchaseHistoryRepository.findAll());
+    printDashLine("n+1 example");
     nPlusOneExample();
-    printDashLine();
+    printDashLine("Constructor mapping");
     fetchCustomerDtos();
+    printDashLine("Projection");
+    fetchUsingProjection();
   }
 
-  private void printDashLine() {
-    log.info("____________________________________________________________________________");
+  private void fetchUsingProjection() {
+    List<CustomerProjection> customerProjections = customerRepository.findALlCustomers();
+    customerProjections.forEach(
+        customerProjection -> log.info(customerProjection.getCustomerNameWithEmail()));
+  }
+
+  private void printDashLine(String text) {
+    log.info(
+        "_____________________________________{}_______________________________________", text);
   }
 
   public void nPlusOneExample() {
