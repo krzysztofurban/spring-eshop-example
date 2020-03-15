@@ -40,6 +40,7 @@ public class ProductService {
     ph.setCustomerId(customerId);
     ph.setProductId(productId);
     ph.setCreatedDate(new Date());
+    purchaseHistoryRepository.save(ph);
   }
 
   public void registerNewProducts() {

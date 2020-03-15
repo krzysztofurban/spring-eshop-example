@@ -22,7 +22,7 @@ public class Customer implements Serializable {
   private LocalDateTime dateAdded;
 
   @JsonIgnore
-  @OneToMany(fetch = FetchType.LAZY)
+  @OneToMany(fetch = FetchType.EAGER)
   @JoinColumn(name = "customerId")
-  Set<Order> order;
+  Set<Order> orders;
 }
