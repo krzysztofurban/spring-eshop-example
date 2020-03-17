@@ -54,8 +54,7 @@ public class DbConfigPrimary {
     Map<String, Object> props = new HashMap<>();
     props.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
     props.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
-    props.put("hiberante.hbm2ddl.auto", "create-dtop");
-
+    props.put("hibernate.hbm2ddl.auto", "create");
     return props;
   }
 }

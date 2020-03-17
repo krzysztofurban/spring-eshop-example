@@ -49,7 +49,7 @@ public class DbConfigSecondary {
     Map<String, Object> props = new HashMap<>();
     props.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
     props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-    props.put("hibernate.hbm2ddl.auto", "create-drop");
+    props.put("hibernate.hbm2ddl.auto", "create");
     return props;
   }
 }
